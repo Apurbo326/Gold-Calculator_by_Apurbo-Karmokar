@@ -23,27 +23,27 @@
         <div class="view">
             <div class="sideview">
                 <p>Today's Gold Price : 
-                <input type="text" id="priceInput" placeholder="Gold Price Per Bhori?"></p>
+                <input type="text" id="priceInput" placeholder="Gold Price Per Bhori?" required></p>
         
                 <p id="textSize">Bhori . Ana . Roti . Point
-                <input type="text" id="weightInput" placeholder="Gold weight?"></p>
+                <input type="text" id="weightInput" placeholder="Gold weight?" required></p>
 
                 <p id="textSize">Labour Cost Per Bhori : </p>
-                <input type="text" id="laborCostInput" placeholder="Labour Cost?">
+                <input type="text" id="laborCostInput" placeholder="Labour Cost?" required>
             </div>
 
             <div class="verticalLine"></div>
 
             <div class="sideview">
-                <p>The Total Price is : <input type="text" id="display"></p>
-                <p>Total Weight in Gram : <input type="text" id="totalWeightInGram"></p>
-                <p id="textSize2">Cost Per Gram (Without Labour fee) : </p><input type="text" id="costPerGram">
+                <p>The Total Price is : <input type="text" id="display" placeholder="NaN"></p>
+                <p>Total Weight in Gram : <input type="text" id="totalWeightInGram" placeholder="NaN"></p>
+                <p id="textSize2">Cost Per Gram (Without Labour fee) : </p><input type="text" id="costPerGram" placeholder="NaN">
             </div>
         </div>
 
         <button onclick="calculateGoldValue()">Calculate</button>
         
-        <p>Who am I? <a href="https://info-apurbo.wordpress.com/">Want's to know?</a></p>
+        <p>Who am I? <a target="_blank" href="https://info-apurbo.wordpress.com/">Want's to know?</a></p>
 
         <script src="index.js"></script>
 
