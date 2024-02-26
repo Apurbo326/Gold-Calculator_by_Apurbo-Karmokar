@@ -6,7 +6,15 @@ function calculateGoldValue() {
 
     // Validate input
     try {
+        if (!inputWeight || isNaN(pricePerBhori) || isNaN(laborCostPerBhori)) {
+            throw new Error("Check Inputs!");
+        }
+
         validateInput(inputWeight);
+
+        if (parseFloat(inputWeight) < 0 || pricePerBhori < 0) {
+            throw new Error("Invalid Inputs!");
+        }
     } catch (error) {
         document.getElementById("display").value = "Error: " + error.message;
         document.getElementById("totalWeightInGram").value = "Error: " + error.message;
@@ -68,7 +76,7 @@ function convertToGrams(inputWeight) {
     var weightInPoint = parseFloat(parts[3]);
 
     // Calculate the total weight in grams
-    var totalWeightInGrams = weightInBhori * 11.6638 + (weightInAna * 11.6638)/16 + (weightInRoti * 11.6638)/96 + (weightInPoint * 11.6638)/ 960;
+    var totalWeightInGrams = weightInBhori * 11.6638 + (weightInAna * 11.6638) / 16 + (weightInRoti * 11.6638) / 96 + (weightInPoint * 11.6638) / 960;
 
     return totalWeightInGrams;
 }
@@ -86,8 +94,8 @@ function costPerGram(inputWeight, pricePerBhori) {
     var totalWeightInPoints = weightInBhori * 16 * 6 * 10 + weightInAna * 6 * 10 + weightInRoti * 10 + weightInPoint;
 
     // Calculate the total weight in grams
-    var totalWeightInGrams = weightInBhori * 11.6638 + (weightInAna * 11.6638)/16 + (weightInRoti * 11.6638)/96 + (weightInPoint * 11.6638)/ 960;
+    var totalWeightInGrams = weightInBhori * 11.6638 + (weightInAna * 11.6638) / 16 + (weightInRoti * 11.6638) / 96 + (weightInPoint * 11.6638) / 960;
 
     // Calculate the total value of the gold
-    return (totalWeightInPoints * ((pricePerBhori) / (16 * 6 * 10)))/totalWeightInGrams;
+    return (totalWeightInPoints * ((pricePerBhori) / (16 * 6 * 10))) / totalWeightInGrams;
 }
